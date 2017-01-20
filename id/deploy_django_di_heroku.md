@@ -177,4 +177,4 @@ Cheers!
 
 ## Organized by CodingForEntrepreneurs
 
-> Last edited by: Agus Makmun - _[https://github.com/agusmakmun](github.com/agusmakmun)_
+> Last edited by: Agus Makmun - _[github.com/agusmakmun](https://github.com/agusmakmun)_
