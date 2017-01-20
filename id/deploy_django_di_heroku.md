@@ -4,7 +4,7 @@
 
 Cara Deploy Project Django di Heroku.com
 
-### 1. Buat project Django anda, misalkan seperti contoh dibawah.
+#### 1. Buat project Django anda, misalkan seperti contoh dibawah.
 
 ```
 src/
@@ -13,9 +13,9 @@ src/myproject/
 src/myproject/settings.py
 ```
 
-### 2. Install [Heroku toolbelt](https://toolbelt.heroku.com/)
+#### 2. Install [Heroku toolbelt](https://toolbelt.heroku.com/)
 
-### 3. Membackup _(Membuat file cadangan untuk `settings.py`)_
+#### 3. Membackup _(Membuat file cadangan untuk `settings.py`)_
 
 > Hal ini sangat penting dilakukan untuk meminimalisir apabila terjadi kesalahan konfigurasi, maupun kebutuhan lainnya.
 
@@ -39,7 +39,7 @@ src/myproject/settings.py
 		src/myproject/settings/production.py
 		```
 
-### 4. Menambahkan script didalam file `settings/__init__.py`:
+#### 4. Menambahkan script didalam file `settings/__init__.py`:
 
 Didalam file `__init__.py` tambahkan beberapa kode untuk mengimport'nya
 dari file `local.py` atau `production.py`
@@ -56,7 +56,7 @@ from .production import *
 - Copy/salin seluruh kode yang ada didalam file `old_settings.py` ke `local.py`.
 - Copy/salin seluruh kode yang ada didalam file `old_settings.py` ke `production.py`.
 
-### 5. Mengawali _(initialize)_ repository Git anda dan menambahkan file `.gitignore`:
+#### 5. Mengawali _(initialize)_ repository Git anda dan menambahkan file `.gitignore`:
 
 Pada project root anda, silahkan ikuti beberapa perintah berikut:
 - mengawalinya dengan perintah `$ git init` _(untuk menggenerate file-file git kedalam folder project anda)_.
@@ -74,7 +74,7 @@ Pada project root anda, silahkan ikuti beberapa perintah berikut:
   > Dalam kasus diatas berarti yang tidak ter-unggah nantinya adalah file `yourproject/settings/local.py`.
   > Untuk lebih lengkapnya bisa melihat dokumentasi dari `.gitignore`: https://git-scm.com/docs/gitignore
 
-### 6. Menambahkan file `requirements.txt`:
+#### 6. Menambahkan file `requirements.txt`:
 
 Didalam file `requirements.txt` ini merupakan beberapa packages yang anda butuhkan:
 
@@ -88,7 +88,7 @@ whitenoise==2.0.6
 
 > Anda mungkin perlu memeriksa versi masing-masing dari tool/package, karena hal tersebut adalah penting.
 
-### 7. Menambahkan file `Procfile`:
+#### 7. Menambahkan file `Procfile`:
 
 File `Procfile` ini tanpa diikuti extensi apapun _(seperti halnya menggunakan `.` titik)_ maupun yang lainnya. Taruh file ini sejajar dengan file `manage.py`, dan masukkan perintah berikut didalam filenya:
 
@@ -96,7 +96,7 @@ File `Procfile` ini tanpa diikuti extensi apapun _(seperti halnya menggunakan `.
 web: gunicorn yourproject.wsgi
 ```
 
-### 8. Mengganti kode didalam file `production.py`
+#### 8. Mengganti kode didalam file `production.py`
 
 *Adapun file `local.py` tidak dirubah, file tersebut digunakan untuk keperluan development saja.*
 
@@ -110,7 +110,7 @@ DATABASES = {
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ```
 
-### 9. Mengecek dan menambahkan project anda ke `.git`
+#### 9. Mengecek dan menambahkan project anda ke `.git`
 
 ```
 $ git status -u                               # file `local.py` tidak muncul disini.
@@ -128,13 +128,13 @@ $ heroku config:set DISABLE_COLLECTSTATIC=1            # mematikan perintah untu
 
 > **Catatan:** `<yourprojectname>` harus diubah dengan nama project anda.
 
-### 11. Deploy ke Heroku
+#### 11. Deploy ke Heroku
 
 ```
 $ git push heroku master
 ```
 
-### 12. Apakah ada perubahan lain? _(ya, tentu ada)_. Pastikan Anda melakukan hal-hal berikut:
+#### 12. Apakah ada perubahan lain? _(ya, tentu ada)_. Pastikan Anda melakukan hal-hal berikut:
 
   1. Rubah didalam file `requirements.txt` sesuai dengan kebutuhan.
   2. Rubah didalam file `production.py` sesuai dengan kebutuhan _(Dan bandingkan kembali dengan file `local.py`)_
@@ -177,4 +177,4 @@ Cheers!
 
 ## Organized by CodingForEntrepreneurs
 
-> Last edited by: Agus Makmun - _[github.com/agusmakmun](github.com/agusmakmun)_
+> Last edited by: Agus Makmun - _[https://github.com/agusmakmun](github.com/agusmakmun)_
